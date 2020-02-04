@@ -22,6 +22,7 @@ import android.content.pm.PackageManager;
 import android.os.ServiceManager;
 import android.view.DisplayCutout;
 
+import com.android.settings.display.OverlayCategoryPreferenceController;
 import androidx.annotation.VisibleForTesting;
 
 public class EmulateDisplayCutoutPreferenceController extends OverlayCategoryPreferenceController {
@@ -31,7 +32,7 @@ public class EmulateDisplayCutoutPreferenceController extends OverlayCategoryPre
     @VisibleForTesting
     EmulateDisplayCutoutPreferenceController(Context context, PackageManager packageManager,
             IOverlayManager overlayManager) {
-        super(context, packageManager, overlayManager, DisplayCutout.EMULATION_OVERLAY_CATEGORY);
+        super(context, DisplayCutout.EMULATION_OVERLAY_CATEGORY);
     }
 
     public EmulateDisplayCutoutPreferenceController(Context context) {
