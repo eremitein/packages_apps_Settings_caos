@@ -28,17 +28,17 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class SecurityPatchLevelPreferenceController extends BasePreferenceController {
+public class SecurityPatchVendorPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "SecurityPatchCtrl";
+    private static final String TAG = "SecurityPatchVendorCtrl";
 
-    private static final String KEY_AOSP_SECURITY_PATCH =
-            "ro.build.version.security_patch";
+    private static final String KEY_VENDOR_SECURITY_PATCH =
+            "ro.vendor.build.security_patch";
 
-    private static final String KEY_AOSP_SECURITY_PATCH_COPY =
-            "build.version.security_patch";
+    private static final String KEY_XXX_SECURITY_PATCH =
+            "ro.keymaster.xxx.security_patch";
 
-    public SecurityPatchLevelPreferenceController(Context context, String key) {
+    public SecurityPatchVendorPreferenceController(Context context, String key) {
         super(context, key);
     }
 
@@ -49,10 +49,10 @@ public class SecurityPatchLevelPreferenceController extends BasePreferenceContro
 
     @Override
     public CharSequence getSummary() {
-        String patchLevel = SystemProperties.get(KEY_AOSP_SECURITY_PATCH_COPY);
+        String patchLevel = SystemProperties.get(KEY_XXX_SECURITY_PATCH);
 
         if (patchLevel.isEmpty()) {
-            patchLevel = SystemProperties.get(KEY_AOSP_SECURITY_PATCH);
+            patchLevel = SystemProperties.get(KEY_VENDOR_SECURITY_PATCH);
         }
 
         if (!patchLevel.isEmpty()) {

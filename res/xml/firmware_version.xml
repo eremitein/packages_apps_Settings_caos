@@ -37,13 +37,12 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
 
-    <!-- Mainline module version -->
+    <!-- Vendor security patch -->
     <Preference
-        android:key="module_version"
-        android:title="@string/module_version"
-        android:summary="@string/summary_placeholder"
+        android:key="security_key_vendor"
+        android:title="@string/security_patch_vendor"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchVendorPreferenceController"/>
 
     <!-- Baseband -->
     <Preference
